@@ -160,6 +160,7 @@ h4 {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    overflow-y: scroll;
     height: 130px;
     width: 450px;
     margin-left: 50px;
@@ -167,9 +168,9 @@ h4 {
 }
 .information-box {
     height: 50px;
-    width: 450px;
+    width: 430px;
     margin-bottom: 5px;
-    background-color: #e6f9fc;
+    background: linear-gradient(to right,#d9f5fd,#fff);
     border-radius: 5px;
     box-shadow: 1px 1px 1px #000;
     display: flex;
@@ -185,28 +186,17 @@ h4 {
 .basis {
     color: #d4cfcf;
     font-size: 8px;
-    margin-top: 0px;
 }
 .information {
-    margin-top: 0;
     margin-left: 10px;
 }
 .basis2 {
     color: #393838;
     font-size: 8px;
-    margin-top: 0px;
 }
 .date {
     margin-top: 0;
     margin-left: 180px;
-}
-.delete {
-    margin-top: 0;
-    margin-left: px;
-}
-.answer {
-    margin-top: 0;
-    margin-left: 0px;
 }
 a:active p{
     display: block;

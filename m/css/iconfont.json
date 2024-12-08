@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "27007163",
+      "name": "视频通话",
+      "font_class": "shipintonghua",
+      "unicode": "e8c1",
+      "unicode_decimal": 59585
+    },
+    {
+      "icon_id": "42689125",
+      "name": "通讯录左-线",
+      "font_class": "tongxunluzuo-xian",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    }
+  ]
+}

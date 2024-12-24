@@ -187,10 +187,10 @@ a:hover {
 }
 
 .difference:hover {
-    animation: drawBorder 2s linear;
+    animation: border 2s linear;
 }
 
-@keyframes drawBorder {
+@keyframes border {
     0% {
         border-top: 5px solid #2a3f17;
     }

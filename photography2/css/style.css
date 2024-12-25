@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -53,7 +54,7 @@
     margin: 20px 20px;
     height: 20px;
     width: 20px;
-} 
+}
 
 .tortoise {
     position: relative;
@@ -79,6 +80,7 @@ a {
 a:hover {
     color: #fff;
 }
+
 .take-pho {
     position: absolute;
     margin-left: -1095px;
@@ -88,7 +90,7 @@ a:hover {
 
 .take-pho:hover {
     transform: scale(0.5);
-    transition-property: transform ;
+    transition-property: transform;
     transition-duration: 2s;
 }
 
@@ -108,7 +110,6 @@ a:hover {
     width: 330px;
     margin-right: 65px;
 }
-
 
 .flamingo2 {
     height: 500px;
@@ -134,7 +135,7 @@ a:hover {
 }
 
 .deer {
-    
+
     margin-top: 600px;
 }
 
@@ -144,7 +145,7 @@ a:hover {
     height: 535px;
     margin-top: -905px;
     margin-left: 485px;
-    background-color: #e0dfdf ;
+    background-color: #e0dfdf;
 }
 
 .word {
@@ -178,7 +179,7 @@ a:hover {
 }
 
 .difference {
-    position: absolute;
+    position: relative;
     margin-top: 450px;
     margin-left: 850px;
     color: #2a3f17;
@@ -186,8 +187,18 @@ a:hover {
     border: none;
 }
 
-.difference:hover {
-    animation: border 2s linear;
+.difference::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 23%;
+    height: 75%;
+    border: 2px solid transparent;
+}
+
+.difference:hover::before {
+    animation: border 3s infinite;
 }
 
 @keyframes border {
@@ -224,7 +235,7 @@ a:hover {
 
 .ani {
     display: flex;
-    margin-top: 550px;
+    margin-top: 50px;
     width: 1165px;
     height: 415px;
     margin-left: 360px;
@@ -360,6 +371,7 @@ a:hover {
     border-bottom: 4px solid #2a3f17;
     padding-bottom: 230px;
 }
+
 .footer {
     position: relative;
     width: 1920px;
@@ -370,7 +382,7 @@ a:hover {
 .sen {
     position: absolute;
     float: left;
-    
+
     font-size: 35px;
     color: #2a3f17;
 }
@@ -420,3 +432,4 @@ a:hover {
     background-color: #fff;
     color: #949f8b;
 }
+

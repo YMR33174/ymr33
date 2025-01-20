@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yemian</title>
+    <style>
+        div {
+            width: 230px;
+            margin: 0 auto;
+        }
+
+        .o {
+            display: inline-block;
+        }
+
+        .j {
+            margin-left: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="inputString">请输入一个字符串：</label>
+        <input type="text" id="inputString" class="o">
+        <br>
+        <label for="inputSubstring">请输入一个子串：</label>
+        <input type="text" id="inputSubstring" class="o">
+        <button class="o j" onclick="countSubstring()">提交</button>
+        <span>子串出现的次数为：</span><br>
+        <span id="number"></span>
+    </div>
+    <script>
+        function countSubstring() {
+            let count = 0, j, i, str = document.getElementById("inputString").value, substr = document.getElementById("inputSubstring").value, condition = document.getElementById("number");
+            for (i = 0; i <= str.length - substr.length; i++) {
+                for (j = 0; j < substr.length; j++) {
+                    if (str[i + j] !== substr[j]) {
+                        break;
+                    }
+                }
+                if (j === substr.length) {
+                    count++;
+                }
+            }
+            condition.innerHTML = count;
+        }
+    </script>
+</body>
+
+</html>
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quan {
+            width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body class="quan">
+    <label for="qqNumber">账号：</label>
+    <input type="text" id="qqNumber">
+    <button onclick="getContent()">获取</button>
+    <div id="content"></div>
+    <script>
+        function getContent() {
+            const account = document.getElementById('qqNumber').value, result = document.getElementById('content');
+            if (!account) {
+                result.innerHTML = `请输入正确的qq号！`;
+                return
+            }
+            const xhr = new XMLHttpRequest(), qurl = `https://api.uomg.com/api/qq.info`;
+            xhr.open('POST', qurl, true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    let resultHtml = '';
+                    resultHtml += `<p>代号：${data.code}</p>`;
+                    resultHtml += `<p>账号：${data.qq}</p>`;
+                    resultHtml += `<p>qq头像：<img src="${data.qlogo}" style="width:50px;height:50px;border-radius:50%"></p>`;
+                    resultHtml += `<p>绿钻相关信息：${JSON.stringify(data.lvzuan)}</p>`;
+                    result.innerHTML = resultHtml;
+                } else if (xhr.readyState === 4 && xhr.status !== 200) {
+                    result.innerHTML = `请求失败`;
+                }
+            };
+            const params = `qq=${account}`;
+            xhr.send(params);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quan {
+            width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="quan">
+    <span id="currentTime">当前时间：</span><br>
+    <button onclick="getCurrentTime()">按钮</button>
+    <ul id="userList"></ul>
+    <script>
+        function getCurrentTime() {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    const data = JSON.parse(this.responseText);
+                    document.getElementById('currentTime').textContent = data.time; 
+                    console.log('当前时间报文', this);
+                    }
+                };
+            xhr.open('GET', 'https://f.m.suning.com/api/ct.do', true); 
+            xhr.send();
+            }
+    </script>
+    
+</body>
+</html>

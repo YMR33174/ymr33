@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .change {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="input" placeholder="请输入单词" @keyup.enter="add">
+        <p>你要输入的单词是：{{input}}</p>
+        <button @click="add">添加</button>&nbsp;
+        <button @click="del">删除</button>
+        <p v-if="list.length>5" class="change">鳖加辣！单词数量太多了</p>
+        <div :class="{'change':list.length>5}">
+            <p>单词列表：</p>
+            <ul>
+                <li v-for="(word,index) in list" :key="index">{{word}}</li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data: function() {
+                return {
+                    input:'',
+                    list:[]
+                };
+            },
+            methods: {
+                add: function() {
+                    if(this.input.trim()) {
+                        this.list.push(this.input.trim());
+                        this.input='';
+                    }
+                },
+                del: function() {
+                    this.list.pop();
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>
